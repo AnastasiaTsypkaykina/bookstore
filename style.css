@@ -1,0 +1,16 @@
+.navbar-brand {
+    display: flex;
+    padding: 10px;
+}
+.icon {
+    padding: 5px;
+}
+#navbar {
+    background-color: rgba(1, 19, 47, 0.834);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
