@@ -7,7 +7,7 @@
       rel="stylesheet"
       href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-   <script src="./db.js"></script>
+    <script src="./db.js"></script>
     <link rel="stylesheet" href="./style.css" />
     <title>Bookstore</title>
   </head>
@@ -25,28 +25,11 @@
       </a>
     </nav>
 
-
     <div class="container">
       <div class="card" style="width: 30rem">
         <div class="card-body">
-          <h5 id="book-title" class="card-title">Title of book</h5>
-          <img class="card-img-top" src="./img/book.svg" alt="Card image cap" />
-          <p class="card-text">
-            <p id="book-price"></p>            
-            <p>Author: 
-                <span id="book-author"></span>
-            </p>            
-               <p>Erscheinungsjahr: 
-                <span id="book-year"></span>
-            </p>           
-               <p>Genre: 
-                <span id="book-genre"></span>
-            </p> 
-          </p>
+          <p id="card-content" class="card-text"></p>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Kommentare:</li>          
-        </ul>       
       </div>
     </div>
   </body>
