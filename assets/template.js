@@ -1,6 +1,6 @@
 function getTemplateBookCard(index) {
   return `<h1 id="book-title" class="card-title">${books[index].name}</h1>
-            <img class="card-img-top" src="./img/book.svg" alt="Card image cap" />
+            <img class="card-img-top" src=${books[index].link} alt="Card image cap" />
             <p id="book-price">${books[index].price
               .toString()
               .replace(".", ",")} Euro</p>            
