@@ -6,7 +6,9 @@
   padding: 5px;
 }
 #navbar {
-  background-color: rgba(1, 19, 47, 0.834);
+  background-color: rgb(169 169 255 / 65%);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  margin-bottom: 10px;
 }
 
 .container {
@@ -16,4 +18,30 @@
 }
 .card-body{
     background-color: rgba(0, 0, 255, 0.336);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+.card {
+  width: 50rem !important;
+}
+body {
+  background-color: rgb(169 169 255 / 65%);
+}
+.comments-content {
+  
+  width: 750px;
+}
+.book-properties {
+  font-weight: bold;
+}
+.properties-content {
+  font-weight: lighter;
+}
+
+.comment-name {
+  width: 200px;
+
+}
+.input-comment {
+  width: 700px;
+  margin-top: 20px;
 }
