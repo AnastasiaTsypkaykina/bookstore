@@ -1,4 +1,4 @@
-function getTemplateBookCard(index, redHeart, emptyHeart) {
+function getTemplateBookCard(index, redHeart, emptyHeart, fullFavIcon, emptyFavIcon) {
   return `
   <div class="container">
       <div class="card" style="width: 30rem">
@@ -27,7 +27,20 @@ function getTemplateBookCard(index, redHeart, emptyHeart) {
                 class="empty_heart_img${emptyHeart} like-heart"
                 id="empty-heart-img${index}"
                 src="./img/heart.png"
-                alt=""
+                
+              />
+              <button onclick="changeFavorit(${index})" class="favorit_button">
+                <img
+                class="fav_icon_img${fullFavIcon} fav_icon"
+                id="full-fav-icon${index}"
+                src="./img/fav_icon_full.svg"
+                
+                />
+                <img
+                class="empty_fav_img${emptyFavIcon} fav_icon"
+                id="empty-fav-icon${index}"
+                src="./img/fav_icon_empty.svg"
+                
               />
             </div>  
           </div>           
