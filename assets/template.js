@@ -1,12 +1,21 @@
 function getTemplateBookCard(index, redHeart, emptyHeart) {
-  return `<h1 id="book-title" class="card-title">${books[index].name}</h1>
-            <img class="card-img-top cover-img" src=${books[index].link} alt="Card image cap" />
+  return `
+  <div class="container">
+      <div class="card" style="width: 30rem">
+        <div class="card-body">
+      
+          <h1 id="book-title" class="card-title">${books[index].name}</h1>
+            <img class="card-img-top cover-img" src=${
+              books[index].link
+            } alt="Card image cap" />
             <div class="price_and_likes">
               <span class="book-properties">${books[index].price
                 .toString()
                 .replace(".", ",")} Euro</span>
              <div class="likes_and_heart">
-                <p id="likes${index}" class="likes properties-content">${books[index].likes}</p> 
+                <p id="likes${index}" class="likes properties-content">${
+                books[index].likes
+                    }</p> 
                 <button onclick="changeLiked(${index})" class="heart_button">
                 <img
                 class="red_heart_img${redHeart} like-heart"
@@ -23,13 +32,19 @@ function getTemplateBookCard(index, redHeart, emptyHeart) {
             </div>  
           </div>           
             <p class="book-properties">Author: 
-                <span class="properties-content" id="book-author">${books[index].author}</span>
+                <span class="properties-content" id="book-author">${
+                  books[index].author
+                }</span>
             </p>            
                <p class="book-properties">Erscheinungsjahr: 
-                <span class="properties-content" id="book-year">${books[index].publishedYear}</span>
+                <span class="properties-content" id="book-year">${
+                  books[index].publishedYear
+                }</span>
             </p>           
                <p class="book-properties">Genre: 
-                <span class="properties-content" id="book-genre">${books[index].genre}</span>
+                <span class="properties-content" id="book-genre">${
+                  books[index].genre
+                }</span>
             </p> 
             <hr class=solid>
            <div class="comment_container">
@@ -43,10 +58,11 @@ function getTemplateBookCard(index, redHeart, emptyHeart) {
                   <button onclick="addComment(${index})" >Send  </button>
               </div>
             </div>
-            <hr class=solid>
-            <br>
+                        
+        </div>
+      </div>
+    </div>
           `;
-          
 }
 function commentsAndNamesTemplate(commentName) {
   return `
@@ -56,4 +72,3 @@ function commentsAndNamesTemplate(commentName) {
             </tr>
           `;
 }
-

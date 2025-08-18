@@ -6,8 +6,8 @@
   padding: 5px;
 }
 #navbar {
-  background-color: rgb(169 169 255 / 65%);
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  background-color: rgba(0, 0, 255, 0.336);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
 }
 
@@ -16,18 +16,20 @@
   justify-content: center;
   align-items: center;
 }
-.card-body{
-    background-color: rgba(0, 0, 255, 0.336);
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+.card-body {
+  margin: 10px;
+  background-color: rgba(0, 0, 255, 0.336);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 .card {
+  margin: 10px;
   width: 50rem !important;
+  background-color: rgb(169 169 255 / 69%)
 }
 body {
   background-color: rgb(169 169 255 / 65%);
 }
 .comments-content {
-  
   width: 750px;
 }
 .book-properties {
@@ -41,7 +43,6 @@ body {
 
 .comment-name {
   width: 200px;
-
 }
 .input-comment {
   width: 700px;
@@ -67,15 +68,14 @@ body {
 .like-heart {
   width: 35px;
   height: 35px;
-
 }
 .cover-img {
   width: 500px !important;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
-  padding: 50px;  
+
+  padding: 50px;
 }
 .card-title {
   font-size: 40px;
