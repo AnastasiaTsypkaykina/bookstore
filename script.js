@@ -1,4 +1,5 @@
 function init() {
+  getAllFromLocalStorage();
   render();
 }
 
@@ -24,11 +25,12 @@ function addComment(indexBooks) {
   let input = document.getElementById(`comment-input${indexBooks}`);
   let commentText = input.value;
   books[indexBooks].comments.push({
-    name: "Bücherwurm7",
+    name: "User123",
     comment: commentText,
   });
+  saveAllToLocalStorage();
   let tbodyRef = document.getElementById(`comment-table${indexBooks}`);
-  tbodyRef.innerHTML += `<tr><td>Bücherwurm7: </td><td>${commentText}</td></tr>`;
+  tbodyRef.innerHTML += `<tr><td>User123: </td><td>${commentText}</td></tr>`;
   input.value = "";
 }
 
@@ -40,10 +42,8 @@ function showRightLike(indexBooks) {
   }
 }
 
-function changeLiked(indexBooks) {
-  
-  if (books[indexBooks].liked === true) {
-   
+function changeLiked(indexBooks) {  
+  if (books[indexBooks].liked === true) {   
     books[indexBooks].liked = false;
     minusLike(indexBooks);
     redHeart(indexBooks);    
@@ -51,7 +51,8 @@ function changeLiked(indexBooks) {
     books[indexBooks].liked = true;
     plusLike(indexBooks);
     emptyHeart(indexBooks);
-  }   
+  }
+  saveAllToLocalStorage();   
 }
 
 function redHeart(indexBooks) {
@@ -59,13 +60,15 @@ function redHeart(indexBooks) {
   let empty = document.getElementById("empty-heart-img" + indexBooks);
   red.classList.add("d_none");
   empty.classList.remove("d_none");  
+  saveAllToLocalStorage();
 }
 
 function emptyHeart(indexBooks) {
   let empty = document.getElementById("empty-heart-img" + indexBooks);
   let red = document.getElementById("red-heart-img" + indexBooks);
   empty.classList.add("d_none");
-  red.classList.remove("d_none");  
+  red.classList.remove("d_none"); 
+  saveAllToLocalStorage(); 
 }
 
 function plusLike(indexBooks) {
@@ -78,4 +81,15 @@ function minusLike(indexBooks) {
   books[indexBooks].likes -= 1;
   let likesRef = document.getElementById("likes" + indexBooks);
   likesRef.innerText = books[indexBooks].likes;
+}
+
+function saveAllToLocalStorage() {
+  localStorage.setItem("allBooks", JSON.stringify(books));
+}
+
+function getAllFromLocalStorage() {
+  let storedBooks = localStorage.getItem("allBooks");
+  if (storedBooks) {
+    books = JSON.parse(storedBooks);
+  }
 }
