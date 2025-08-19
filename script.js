@@ -68,14 +68,17 @@ function changeFavorit(indexBooks) {
     books[indexBooks].favorit = false;    
     emptyFavIcon(indexBooks);
     saveAllToLocalStorage();
-    // favoritBooks.splice(1, books[indexBooks].number);       
+    deleteFavorit(indexBooks);       
   } else {
     books[indexBooks].favorit = true;    
     fullFavIcon(indexBooks);
     favoritBooks.push(books[indexBooks]);
     saveAllToLocalStorage(); 
-  }
-   
+  }   
+}
+
+function deleteFavorit(indexBooks) {
+  favoritBooks.splice(indexBooks, 1);
 }
 
 function emptyHeart(indexBooks) {
@@ -150,10 +153,10 @@ function renderFavorites() {
     let tableRef = document.getElementById("comment-table" + ind);
     for (
       let indexComments = 0;
-      indexComments < favoritBooks[ind].comments.length;
+      indexComments < favoritBooks[index].comments.length;
       indexComments++
     ) {
-      let commentName = favoritBooks[ind].comments[indexComments];
+      let commentName = favoritBooks[index].comments[indexComments];
       tableRef.innerHTML += commentsAndNamesTemplate(commentName);
     }
   }
