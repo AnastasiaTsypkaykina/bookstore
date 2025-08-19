@@ -69,7 +69,7 @@ function getTemplateBookCard(index, redHeart, emptyHeart, fullFavIcon, emptyFavI
             <hr class=solid>
            <div class="comment_container">
            <span class="book-properties">Kommentare: </span>
-                  <table  >
+                  <table class="comment-table" >
                     <tbody id="comment-table${index}" ></tbody>
                   </table>
                 </div>
@@ -89,6 +89,6 @@ function commentsAndNamesTemplate(commentName) {
             <tr class="comments-content"> 
               <td class="comment-name">${commentName.name}:</td>
               <td class = "comment-text">${commentName.comment}</td>
-            </tr>
+            </tr>            
           `;
 }

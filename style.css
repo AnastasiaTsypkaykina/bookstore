@@ -49,6 +49,7 @@ body {
 
 .comment-name {
   width: 200px;
+  font-style: italic;
 }
 .input-comment {
   width: 600px;
@@ -61,6 +62,9 @@ body {
 .send-comment {
   height: 30px;
   margin-top: 20px;
+}
+table {
+  border-spacing: 50px 10px;
 }
 .d_none {
   display: none;
@@ -83,6 +87,9 @@ body {
   width: 35px;
   height: 35px;
 }
+.likes {
+  font-weight: bold;
+}
 .fav_icon {
   width: 35px;
   height: 35px;
@@ -95,11 +102,58 @@ body {
   margin-right: auto;
   padding: 50px;
   object-fit: cover;
-  
 }
 .card-title {
   font-size: 40px;
 }
+.show-favorit {
+  margin-right: 20px;
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #0a0a0a;
+  cursor: pointer;
+  display: inline-flex;
+  
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+.show-favorit:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+.show-favorit:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+.show-favorit:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
 
 @media (max-width: 600px) {
   #container {
@@ -137,5 +191,61 @@ body {
     width: 300px !important;
     height: 300px !important;
     object-fit: cover;
+  }
+  .card-title {
+    font-size: 30px;
+  }
+  .comment-name {
+    width: 150px;
+  }
+}
+@media (max-width: 370px) {
+  .cover-img {
+    width: 200px !important;
+    height: 200px !important;
+    object-fit: cover;
+  }
+  .card-title {
+    font-size: 25px;
+  }
+  .show-favorit {
+    width: 120px;
+  }
+}
+@media (max-width: 500px) {
+  .book-properties {
+    font-size: 16px;
+  }
+  .fav_icon {
+    width: 25px;
+    height: 25px;
+  }
+  .likes {
+    font-size: 16px;
+  }
+  .like-heart {
+    width: 25px;
+    height: 25px;
+  }
+  .comments-content {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  .comment-text {
+    width: 300px;
+  }
+}
+@media (max-width: 370px) {
+  .input-comment {
+    width: 150px;
+  }
+}
+@media (max-width: 410px) {
+  .comments-content {
+    width: 200px;
+  }
+  .comment-text {
+    width: 200px;
   }
 }
