@@ -37,7 +37,7 @@ function addComment(indexBooks) {
   });
   saveAllToLocalStorage();
   let tbodyRef = document.getElementById(`comment-table${indexBooks}`);
-  tbodyRef.innerHTML += `<tr><td>User123: </td><td>${commentText}</td></tr>`;
+  tbodyRef.innerHTML += `<tr class="comments-content"><td class="comment-name">User123:  </td><td class="comment-text">${commentText}</td></tr>`;
   input.value = "";
 }
 
@@ -48,6 +48,7 @@ function showRightLike(indexBooks) {
     return { redHeart: " d_none", emptyHeart: "" };
   }
 }
+
 function showRightFav(indexBooks) {
   if (books[indexBooks].favorit === true) {
     return { fullFavIcon: "", emptyFavIcon: " d_none" };
@@ -60,11 +61,11 @@ function changeLiked(indexBooks) {
   if (books[indexBooks].liked === true) {
     books[indexBooks].liked = false;
     minusLike(indexBooks);
-    emptyHeart(indexBooks);
+    setEmptyHeart(indexBooks);
   } else {
     books[indexBooks].liked = true;
     plusLike(indexBooks);
-    redHeart(indexBooks);
+    setRedHeart(indexBooks);
   }
   saveAllToLocalStorage();
 }
@@ -72,18 +73,15 @@ function changeLiked(indexBooks) {
 function changeFavorit(indexBooks) {
   if (books[indexBooks].favorit === true) {
     books[indexBooks].favorit = false;
-    emptyFavIcon(indexBooks);    
+    setEmptyFavIcon(indexBooks);
   } else {
     books[indexBooks].favorit = true;
-    fullFavIcon(indexBooks);    
+    setFullFavIcon(indexBooks);
   }
   saveAllToLocalStorage();
 }
 
-
-
-
-function emptyHeart(indexBooks) {
+function setEmptyHeart(indexBooks) {
   let red = document.getElementById("red-heart-img" + indexBooks);
   let empty = document.getElementById("empty-heart-img" + indexBooks);
   red.classList.add("d_none");
@@ -91,7 +89,7 @@ function emptyHeart(indexBooks) {
   saveAllToLocalStorage();
 }
 
-function redHeart(indexBooks) {
+function setRedHeart(indexBooks) {
   let empty = document.getElementById("empty-heart-img" + indexBooks);
   let red = document.getElementById("red-heart-img" + indexBooks);
   empty.classList.add("d_none");
@@ -99,7 +97,7 @@ function redHeart(indexBooks) {
   saveAllToLocalStorage();
 }
 
-function emptyFavIcon(indexBooks) {
+function setEmptyFavIcon(indexBooks) {
   let full = document.getElementById("full-fav-icon" + indexBooks);
   let emptyFav = document.getElementById("empty-fav-icon" + indexBooks);
   full.classList.add("d_none");
@@ -107,7 +105,7 @@ function emptyFavIcon(indexBooks) {
   saveAllToLocalStorage();
 }
 
-function fullFavIcon(indexBooks) {
+function setFullFavIcon(indexBooks) {
   let full = document.getElementById("full-fav-icon" + indexBooks);
   let emptyFav = document.getElementById("empty-fav-icon" + indexBooks);
   emptyFav.classList.add("d_none");
@@ -129,7 +127,6 @@ function minusLike(indexBooks) {
 
 function saveAllToLocalStorage() {
   localStorage.setItem("allBooks", JSON.stringify(books));
-  
 }
 
 function getAllFromLocalStorage() {

@@ -14,19 +14,22 @@
     <title>Bookstore</title>
   </head>
   <body onload="init()">
-    <nav id="navbar" class="navbar navbar-light">
-      <a class="navbar-brand" href="#">
+    <nav id="navbar" class="navbar navbar-light" >
+      <a class="navbar-brand" href="#"onclick="init()">
         <img
           class="icon"
           src="./img/book_icon.svg"
           width="30"
           height="30"
           alt="logo"
-          onclick="init()"
+          
         />
         <p>BookStore</p>
       </a>
-      <button onclick="renderFavorites()" class="show-favorit">Show favorites</button>
+      <div>
+        <button onclick="init()" class="show-favorit">Show all books</button>
+        <button onclick="renderFavorites()" class="show-favorit">Show favorites</button>
+      </div>
     </nav>
     <p id="card-content" class="card-text"></p>
 
