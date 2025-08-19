@@ -1,5 +1,4 @@
-let favoritBooks = [
-    ];
+
 
 let books = [
   {
