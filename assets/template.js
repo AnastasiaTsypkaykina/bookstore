@@ -1,4 +1,10 @@
-function getTemplateBookCard(index, redHeart, emptyHeart, fullFavIcon, emptyFavIcon) {
+function getTemplateBookCard(
+  index,
+  redHeart,
+  emptyHeart,
+  fullFavIcon,
+  emptyFavIcon
+) {
   return `
   <div class="container">
       <div class="card" style="width: 30rem">
@@ -9,7 +15,9 @@ function getTemplateBookCard(index, redHeart, emptyHeart, fullFavIcon, emptyFavI
             
         <div class="container-text-img">
           <div class="book-image">
-            <img class="card-img-top cover-img" src=${books[index].link} alt="Book image" />
+            <img class="card-img-top cover-img" src=${
+              books[index].link
+            } alt="Book image" />
           </div>
           <div class="text-eigenschaften">
             <p class="book-properties">Author: 
@@ -48,8 +56,8 @@ function getTemplateBookCard(index, redHeart, emptyHeart, fullFavIcon, emptyFavI
                 alt="favorite"
               /> </button>
               <p id="likes${index}" class="likes properties-content">${
-                books[index].likes
-                    }</p> 
+    books[index].likes
+  }</p> 
               <button onclick="changeLiked(${index})" class="heart_button" label="button click">
               <img
                 class="red_heart_img${redHeart} like-heart"

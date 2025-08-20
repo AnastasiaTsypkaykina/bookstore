@@ -10,30 +10,29 @@
     <script src="./assets/db.js"></script>
     <script src="./assets/template.js"></script>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" type="image/x-icon" href="./img/book_icon.svg">
+    <link rel="icon" type="image/x-icon" href="./img/book_icon.svg" />
     <title>Bookstore</title>
   </head>
   <body onload="init()">
-    <nav id="navbar" class="navbar navbar-light" >
-      <a class="navbar-brand" href="#"onclick="init()">
+    <nav id="navbar" class="navbar navbar-light">
+      <a class="navbar-brand" href="#" onclick="init()">
         <img
           class="icon"
           src="./img/book_icon.svg"
           width="30"
           height="30"
           alt="logo"
-          
         />
         <p>BookStore</p>
       </a>
       <div>
         <button onclick="init()" class="show-favorit">Show all books</button>
-        <button onclick="render(`fav`)" class="show-favorit">Show favorites</button>
+        <button onclick="render(`fav`)" class="show-favorit">
+          Show favorites
+        </button>
       </div>
     </nav>
     <p id="card-content" class="card-text"></p>
-
-    
   </body>
   <script src="./script.js"></script>
 </html>

@@ -1,5 +1,3 @@
-
-
 let books = [
   {
     number: 0,

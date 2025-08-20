@@ -4,52 +4,44 @@ function init() {
 }
 
 function render(category) {
-  let contentCard = document.getElementById("card-content");
+  let contentCard = document.getElementById("card-content"); 
   contentCard.innerHTML = "";
   for (let index = 0; index < books.length; index++) {
     if (category === "all") {
-      let hearts = showRightLike(index);
-      let favorit = showRightFav(index);
-      contentCard.innerHTML += getTemplateBookCard(
-        index,
-        hearts.redHeart,
-        hearts.emptyHeart,
-        favorit.fullFavIcon,
-        favorit.emptyFavIcon
-      );
-      let tableRef = document.getElementById("comment-table" + index);
-      for (
-        let indexComments = 0;
-        indexComments < books[index].comments.length;
-        indexComments++
-      ) {
-        let commentName = books[index].comments[indexComments];
-        tableRef.innerHTML += commentsAndNamesTemplate(commentName);
-      }
+      showContent(index);
+      renderComments(books[index], index);
     } else if (category === `fav` && books[index].favorit) {
       let ind = books[index].number;
-      let hearts = showRightLike(ind);
-      let favorit = showRightFav(ind);
-      contentCard.innerHTML += getTemplateBookCard(
-        ind,
-        hearts.redHeart,
-        hearts.emptyHeart,
-        favorit.fullFavIcon,
-        favorit.emptyFavIcon
-      );
-      let tableRef = document.getElementById("comment-table" + ind);
-      for (
-        let indexComments = 0;
-        indexComments < books[ind].comments.length;
-        indexComments++
-      ) {
-        let commentName = books[ind].comments[indexComments];
-        tableRef.innerHTML += commentsAndNamesTemplate(commentName);
-      }
+      showContent(ind);      
+      renderComments(books[ind], ind);
     }
-  } 
+  }
 }
 
+function showContent(index) {
+  let contentCard = document.getElementById("card-content");  
+  let hearts = showRightLike(index);
+  let favorit = showRightFav(index);
+  contentCard.innerHTML += getTemplateBookCard(
+    index,
+    hearts.redHeart,
+    hearts.emptyHeart,
+    favorit.fullFavIcon,
+    favorit.emptyFavIcon
+  );
+}
+
+function renderComments(book, i) {
+  let tableRef = document.getElementById("comment-table" + i);
+  for (
+    let indexComments = 0;
+    indexComments < book.comments.length;
+    indexComments++
+  ) {
+    let commentName = book.comments[indexComments];
+    tableRef.innerHTML += commentsAndNamesTemplate(commentName);
+  }
+}
 
 function addComment(indexBooks) {
   let input = document.getElementById(`comment-input${indexBooks}`);
@@ -158,32 +150,3 @@ function getAllFromLocalStorage() {
     books = JSON.parse(storedBooks);
   }
 }
-
-// function renderFavorites() {
-//   getAllFromLocalStorage();
-//   let contentCard = document.getElementById("card-content");
-//   contentCard.innerHTML = "";
-//   for (let index = 0; index < books.length; index++) {
-//     if (books[index].favorit) {
-//       let ind = books[index].number;
-//       let hearts = showRightLike(ind);
-//       let favorit = showRightFav(ind);
-//       contentCard.innerHTML += getTemplateBookCard(
-//         ind,
-//         hearts.redHeart,
-//         hearts.emptyHeart,
-//         favorit.fullFavIcon,
-//         favorit.emptyFavIcon
-//       );
-//       let tableRef = document.getElementById("comment-table" + ind);
-//       for (
-//         let indexComments = 0;
-//         indexComments < books[ind].comments.length;
-//         indexComments++
-//       ) {
-//         let commentName = books[ind].comments[indexComments];
-//         tableRef.innerHTML += commentsAndNamesTemplate(commentName);
-//       }
-//     }
-//   }
-// }
